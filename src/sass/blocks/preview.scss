@@ -1,0 +1,60 @@
+.preview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 100vw;
+}
+
+.preview__title {
+  color: #ffffff;
+  font-size: 56px;
+  line-height: 1.8;
+  width: 830px;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+
+.preview__title div {
+  display: inline-block;
+}
+
+.preview__list {
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+  z-index: 100;
+}
+
+.preview__list svg {
+  fill: #ffffff;
+  transition: transform 0.5s ease-in, fill 0.8s ease-in;
+}
+
+.preview__link {
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.preview__link:hover svg {
+  fill: #163631;
+  transform: scale(1.2);
+}
+
+.preview__background {
+  display: block;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

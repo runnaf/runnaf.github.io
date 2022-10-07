@@ -1,0 +1,49 @@
+.about-us {
+  width: 100vw;
+  height: 100vh;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #ffffff;
+  padding-top: calc(108px + 50px);
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.about-us__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 40px;
+}
+
+.about-us__item {
+  position: relative;
+  padding-left: 35px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.about-us__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: -4px;
+  left: 0;
+  margin: auto 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  border: 2px solid #ffffff;
+}
+
+.about-us__subtitle {
+  margin-bottom: 10px;
+}
+
+.about-us__text {
+  margin-bottom: 15px;
+}
+
+.about-us__text span {
+  color: #163631;
+}

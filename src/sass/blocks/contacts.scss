@@ -1,0 +1,170 @@
+.contacts {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  padding: 120px 80px 100px;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+
+  &::after {
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    background-image: url("../image/tv-noice.png");
+    pointer-events: none;
+    animation: grain 1s steps(15) infinite;
+    will-change: background-position;
+    backface-visibility: visible;
+    transform: translateZ(0);
+    content: "";
+    width: 366%;
+    height: 300%;
+    z-index: -60;
+  }
+}
+
+.contacts__desk-link {
+  font-size: 3em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.contacts__link-email {
+  font-family: "Neucha", cursive;
+  color: #d67060;
+  font-size: 2.4em;
+  line-height: 1.2;
+  display: block;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.contacts__title {
+  font-size: 6.5em;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0 auto 25px;
+  text-align: center;
+  // opacity: 0;
+}
+
+.contacts__form {
+  font-family: "Neucha", cursive;
+  font-size: 2em;
+  color: #ffffff;
+  // opacity: 0;
+}
+
+.contacts__form-title {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contacts__field {
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.contacts__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.contacts__field-container {
+  display: flex;
+  align-items: center;
+
+  &:first-child {
+    justify-self: end;
+  }
+}
+
+.contacts__field-container--text {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  justify-self: center;
+  font-size: 0.6em;
+  padding: 5px;
+  color: #000000;
+  min-height: 120px;
+}
+
+.contacts__field-desc {
+  padding: 0 35px 0 0;
+  line-height: 1.2;
+  color: #d67060;
+  font-size: 36px;
+}
+
+.contacts input {
+  margin: 0;
+  padding: 5px 20px;
+  color: #163631;
+  font-family: "Neucha", cursive;
+  line-height: 1.1;
+  font-size: 1em;
+  outline: none;
+
+  &:focus {
+    color: #163631;
+  }
+}
+
+.contacts__information-button,
+.contacts button {
+  font-family: "Neucha", cursive;
+  padding: 7px 20px;
+  color: #d67060;
+  border: none;
+  border-radius: 5px;
+  background-color: #fafafa;
+  margin-top: 40px;
+  min-width: 175px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    color: #163631;
+  }
+}
+
+.contacts__button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contacts textarea {
+  width: 500px;
+  height: 120px;
+  color: #163631;
+  font-size: 18px;
+  outline: none;
+  padding: 8px;
+}
+
+.contacts__information {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  gap: 25px;
+}
+
+@keyframes grain {
+  0% {transform: translate(0, 0)}
+  100% {transform: translate(0, 0)}
+  10% { transform:translate(-15%, -10%)}
+  20% { transform:translate(-20%, -5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-20%, 10%) }
+  60% { transform:translate(25%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+}
