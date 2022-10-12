@@ -686,8 +686,11 @@ li {
   padding-left: 40px;
   padding-right: 40px;
   z-index: 100;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 
 .header-page__navigation {
@@ -742,6 +745,16 @@ li {
 }
 
 .header-page__link:hover {
+  font-size: 28px;
+}
+
+.header-page__link.active {
+  font-size: 28px;
+  color: #163631;
+}
+
+.header-page__link.active-color {
+  color: #d67060;
   font-size: 28px;
 }
 
@@ -1731,9 +1744,7 @@ img {
   }
 }
 
-/* @media (hover: hover), screen and (min-width: 0\0) {
-  &:hover,
-  &:focus {
-    color: $color-default-white;
-  }
-} */
+.section {
+  height: 100vh;
+  width: 100vw;
+}
