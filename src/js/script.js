@@ -1,15 +1,18 @@
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const select = (elem) => document.querySelector(elem);
 const text = select('.preview__title');
 const main = select('main');
 const petItems = document.querySelectorAll('.projects__pet-link');
-const mainLink = document.querySelector('.main-link');
-const aboutUs = document.querySelector('.about-us-link');
-const skills = document.querySelector('.skills-link');
-const projects = document.querySelector('.projects-link');
-const contacts = document.querySelector('.contacts-link');
+// const mainLink = document.querySelector('.main-link');
+// const aboutUs = document.querySelector('.about-us-link');
+// const skills = document.querySelector('.skills-link');
+// const projects = document.querySelector('.projects-link');
+// const contacts = document.querySelector('.contacts-link');
 const links = document.querySelectorAll('.header-page__link');
 
 const splitTextMy = (el) => {
@@ -50,12 +53,11 @@ ScrollTrigger.create({
   animation: tl,
   trigger: 'body',
   start: 'top top',
-  end: () => main.offsetWidth * 4,
+  end: () => main.offsetWidth * 2,
   scrub: true,
   pin: true,
 });
-document.querySelector('.main-link').style.color = '#163631';
-document.querySelector('.main-link').style.fontSize = '28px';
+
 tl.to('.main-link', {color: '#163631', fontSize: '28px', duration: 50});
 tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
 tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
@@ -108,41 +110,23 @@ petItems.forEach((item) => {
   });
 });
 
-function getDefaultValues(items) {
+function getDefaultValues(elem, className = 'active', items = links) {
   items.forEach((item) =>{
-    item.style.color = '#ffffff';
-    item.style.fontSize = '24px';
+    item.classList.add(className);
   });
+  elem.classList.add(className);
 }
 
-mainLink.addEventListener('click', ()=>{
-  getDefaultValues(links);
-  mainLink.style.color = '#163631';
-  mainLink.style.fontSize = '28px';
-  gsap.to('.preview', {x: '0%', y: '100%', duration: 25});
-});
+links.forEach((anchor) => {
 
-aboutUs.addEventListener('click', ()=>{
-  getDefaultValues(links);
-  aboutUs.style.color = '#163631';
-  aboutUs.style.fontSize = '28px';
-});
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-skills.addEventListener('click', ()=>{
-  getDefaultValues(links);
-  skills.style.color = '#163631';
-  skills.style.fontSize = '28px';
-});
-
-projects.addEventListener('click', ()=>{
-  getDefaultValues(links);
-  projects.style.color = '#163631';
-  projects.style.fontSize = '28px';
-});
-
-contacts.addEventListener('click', ()=>{
-  getDefaultValues(links);
-  contacts.style.color = '#163631';
-  contacts.style.fontSize = '28px';
+    const myHref = anchor.getAttribute('href').substr(1);
+    document.getElementById(myHref).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
 });
 

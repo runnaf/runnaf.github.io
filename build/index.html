@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="icon" href="./image/favicon/favicon.ico">
   <link rel="icon" href="./image/favicon/favicon.svg" type="image/svg+xml">
@@ -37,7 +38,7 @@
       </nav>
     </header>
     <main class="page-main">
-      <section class="container preview" id="preview">
+      <section class="container preview section" id="preview">
         <h1 class="preview__title">Привет. Меня зовут Ирина. Я junior frontend-developer.</h1>
         <ul class="preview__list">
           <li>
@@ -67,7 +68,7 @@
         </ul>
         <img class="preview__background" src="./image/background4.jpg" alt="фон пленки старого фотоаппарата">
       </section>
-      <section class="container about-us" id="aboutUs">
+      <section class="container about-us section" id="aboutUs"  data-aos="fade-right" data-aos-easing="ease-in-sine">
         <h2 class="visually-hidden">Обо мне и навыки</h2>
         <div class="about-us__container">
           <h3 class="about-us__subtitle">
@@ -99,11 +100,11 @@
           </ul>
         </div>
       </section>
-      <section class="projects" id="projects">
+      <section class="projects section" id="projects" >
         <h2 class="progects__title">Мои проекты</h2>
         <div class="projects__container">
           <div class="projects__item">
-            <ul class="projects__list-site">
+            <ul class="projects__list-site" data-aos="fade-right" data-aos-easing="ease-in-sine">
               <li class="projects__project">
                 <h3 class="projects__subtitle">“Погнали” - многостраничный сервис поиска попутчиков</h3>
                 <a class="projects__img-container" target="_blank" href="https://pognaly.glitch.me">
@@ -215,7 +216,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts" id="contact">
+      <section class="contacts section" id="contact">
         <h2 class="contacts__title">Контакты</h2>
         <div class="contacts__link-container">
           <p class="contacts__desk-link">Со мной можно связаться по почте:</p>
