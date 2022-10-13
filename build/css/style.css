@@ -1564,12 +1564,14 @@ img {
   padding: 0;
   margin: 0 auto 25px;
   text-align: center;
+  opacity: 0;
 }
 
 .contacts__form {
   font-family: "Neucha", cursive;
   font-size: 2em;
   color: #ffffff;
+  opacity: 0;
 }
 
 .contacts__form-title {

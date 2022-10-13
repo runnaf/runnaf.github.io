@@ -58,7 +58,7 @@ ScrollTrigger.create({
   pin: true,
 });
 
-tl.to('.main-link', {color: '#163631', fontSize: '28px', duration: 50});
+tl.to('.main-link', {color: '#163631', fontSize: '28px'});
 tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
 tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
 tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 50});
@@ -112,7 +112,7 @@ petItems.forEach((item) => {
 
 function getDefaultValues(elem, className = 'active', items = links) {
   items.forEach((item) =>{
-    item.classList.add(className);
+    item.classList.remove(className);
   });
   elem.classList.add(className);
 }
