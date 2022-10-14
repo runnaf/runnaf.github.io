@@ -23,12 +23,28 @@
     height: 300%;
     z-index: -60;
   }
+
+  @include vp-1199 {
+    padding: 140px 40px 80px;
+  }
+
+  @include vp-767 {
+    padding: 80px 15px 60px;
+  }
 }
 
 .contacts__desk-link {
   font-size: 3em;
   line-height: 1.2;
   text-align: center;
+
+  @include vp-1199 {
+    font-size: 2em;
+  }
+
+  @include vp-767 {
+    font-size: 1.2em;
+  }
 }
 
 .contacts__link-email {
@@ -39,6 +55,11 @@
   display: block;
   margin: 0 auto 50px;
   text-align: center;
+
+  @include vp-767 {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+  }
 }
 
 .contacts__title {
@@ -48,6 +69,14 @@
   margin: 0 auto 25px;
   text-align: center;
   opacity: 0;
+
+  @include vp-1199 {
+    font-size: 4em;
+  }
+
+  @include vp-767 {
+    font-size: 2em;
+  }
 }
 
 .contacts__form {
@@ -55,6 +84,7 @@
   font-size: 2em;
   color: #ffffff;
   opacity: 0;
+  margin-bottom: auto;
 }
 
 .contacts__form-title {
@@ -62,6 +92,15 @@
   line-height: 1.2;
   margin-left: auto;
   margin-right: auto;
+
+  @include vp-1199 {
+    font-size: 1em;
+    margin-bottom: 25px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+  }
 }
 
 .contacts__field {
@@ -74,6 +113,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+
+  @include vp-1199 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contacts__field-container {
@@ -82,6 +125,14 @@
 
   &:first-child {
     justify-self: end;
+
+    @include vp-1199 {
+      justify-self: start;
+    }
+  }
+
+  @include vp-767 {
+    justify-self: start;
   }
 }
 
@@ -93,6 +144,18 @@
   padding: 5px;
   color: #000000;
   min-height: 120px;
+
+  @include vp-1199 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    padding: 0;
+    justify-content: start;
+    min-height: fit-content;
+  }
 }
 
 .contacts__field-desc {
@@ -100,6 +163,15 @@
   line-height: 1.2;
   color: #d67060;
   font-size: 36px;
+
+  @include vp-1199 {
+    font-size: 22px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+    padding-right: 15px;
+  }
 }
 
 .contacts input {
@@ -113,6 +185,10 @@
 
   &:focus {
     color: #163631;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
   }
 }
 
@@ -133,6 +209,12 @@
   &:hover {
     color: #163631;
   }
+
+  @include vp-767 {
+    font-size: 16px;
+    min-width: 160px;
+    padding: 7px 10px;
+  }
 }
 
 .contacts__button {
@@ -147,6 +229,11 @@
   font-size: 18px;
   outline: none;
   padding: 8px;
+
+  @include vp-767 {
+    width: 100px;
+    height: 50px;
+  }
 }
 
 .contacts__information {

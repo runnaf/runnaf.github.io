@@ -1,4 +1,7 @@
 .skills {
   margin-top: 50px;
-  // opacity: 0;
+
+  @include vp-767 {
+    margin-top: 10px;
+  }
 }

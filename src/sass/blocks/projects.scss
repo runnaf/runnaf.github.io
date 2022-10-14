@@ -13,6 +13,14 @@
   padding-left: 80px;
   margin-top: 100px;
   margin-bottom: 0;
+
+  @include vp-1199 {
+    font-size: 4em;
+  }
+
+  @include vp-767 {
+    font-size: 2.5em;
+  }
 }
 
 .projects h2::after,
@@ -46,6 +54,10 @@
   padding-right: 25px;
   background-color: #d67060;
   margin: 0;
+
+  @include vp-767 {
+    padding-left: 0;
+  }
 }
 
 .projects__list-site::before {
@@ -58,6 +70,10 @@
   font-size: 18px;
   padding: 20px;
   z-index: 100;
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
 .projects__list-site::after {
@@ -68,8 +84,11 @@
   min-width: 20vw;
   height: 100%;
   background-color: #163631;
-
   background-image: repeating-linear-gradient(transparent, transparent 60px, #ffffff 62px), repeating-linear-gradient(90deg, transparent, transparent 60px, #ffffff 62px);
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
 .projects__subtitle {
@@ -88,6 +107,10 @@
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+
+  @include vp-767 {
+    width: 332px;
+  }
 }
 
 .projects__img-container::after {
@@ -98,12 +121,21 @@
   width: 100%;
   height: 100%;
   background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+
+  @include vp-767 {
+    height: 66%;
+  }
 }
 
 .projects__project {
   width: 50vw;
   min-width: 50%;
   background-color: #d67060;
+
+  @include vp-767 {
+    min-width: 25%;
+    margin-right: 10px;
+  }
 }
 
 .projects__img-container:hover::after {
@@ -118,16 +150,21 @@
 }
 
 .projects__project-img {
-  width: 345px;
+  width: 100%;
   height: 90%;
   margin: 32px 110px 0 40px;
+
+  @include vp-767 {
+    margin: 0;
+    height: 66%;
+  }
 }
 
 .projects__image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 500px;
+  width: 100%;
   height: auto;
   display: block;
   margin-left: auto;
@@ -250,8 +287,16 @@
   color: transparent;
   -webkit-text-stroke: 1px #ffffff;
 
+  @include vp-1199 {
+    color: #d67060;
+  }
+
   &:hover {
-    color: #ffffff;
+    color: #d67060;
+
+    @include vp-1199 {
+      -webkit-text-stroke: 1px #d67060;
+    }
   }
 }
 

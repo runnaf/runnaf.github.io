@@ -17,6 +17,9 @@
           <img src="./image/icons/logo.svg" alt="Логотип 'Ирина Лукьянова'">
           <span class="visually-hidden">Логотип "Ирина Лукьянова"</span>
         </a>
+        <button class="header-page__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
         <ul class="header-page__list">
           <li class="header-page__item">
             <a href="#preview" class="header-page__link main-link active">Главная</a>
@@ -37,8 +40,13 @@
       </nav>
     </header>
     <main class="page-main">
+      <h1 class="visually-hidden">Портфолио с работами Лукьяновой Ирины</h1>
       <section class="container preview section" id="preview">
-        <h1 class="preview__title">Привет. Меня зовут Ирина. Я junior frontend-developer.</h1>
+        <h2 class="visually-hidden">Приветствие</h2>
+        <div class="preview__title-container">
+          <p class="preview__title">Привет. Меня зовут Ирина.</p>
+          <p class="preview__title">Я junior frontend-developer.</p>
+        </div>
         <ul class="preview__list">
           <li>
             <a href="tg://resolve?domain=@LukianovaIrina" class="preview__link" target="_blank">
@@ -69,14 +77,14 @@
       </section>
       <section class="container about-us section" id="aboutUs"  data-aos="fade-right" data-aos-easing="ease-in-sine">
         <h2 class="visually-hidden">Обо мне и навыки</h2>
-        <div class="about-us__container">
+        <div class="about-us__container presentation">
           <h3 class="about-us__subtitle">
             Обо мне
           </h3>
+          <p class="about-us__text">Программированием я стала заниматься в сентябре 2021 г, поступив на курсы <span>HTML Academy frontend-developer.</span> Как и многие фронтендеры я начала изучать семантическу, кроссбраузерную и адаптивную верстку, сделала свои первые адаптивные проекты. В своих работах часто использую гриды и флексы, HTML5. Я считаю важным писать сематически верный, валидный код.</p>
+          <p class="about-us__text">Навыки Java Script я отрабатывала в школе программирования Can She Code Inc. Благодаря этой школе программирования я научилась реализовывать свои проекты от задумки до реализации использовать анимацию и еще больше влюбилась в JS. С моими PET проектами можете познакомиться ниже.</p>
+          <p class="about-us__text">Мне нравится программирование. Это магия  с помощью которой я могу осущствить все свои задумки. Это возможность эксперементировать, рости и совершенствоваться. И конечно не впасть в деменцию в будущем.</p>
         </div>
-        <p class="about-us__text">Программированием я стала заниматься в сентябре 2021 г, поступив на курсы <span>HTML Academy frontend-developer.</span> Как и многие фронтендеры я начала изучать семантическу, кроссбраузерную и адаптивную верстку, сделала свои первые адаптивные проекты. В своих работах часто использую гриды и флексы, HTML5. Я считаю важным писать сематически верный, валидный код.</p>
-        <p class="about-us__text">Навыки Java Script я отрабатывала в школе программирования Can She Code Inc. Благодаря этой школе программирования я научилась реализовывать свои проекты от задумки до реализации использовать анимацию и еще больше влюбилась в JS. С моими PET проектами можете познакомиться ниже.</p>
-        <p class="about-us__text">Мне нравится программирование. Это магия  с помощью которой я могу осущствить все свои задумки. Это возможность эксперементировать, рости и совершенствоваться. И конечно не впасть в деменцию в будущем.</p>
         <div class="about-us__container skills" id="skills">
           <h3 class="about-us__subtitle">
             Мои Навыки
