@@ -5,15 +5,19 @@ import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
 const select = (elem) => document.querySelector(elem);
-const text = select('.preview__title');
+const selectAll = (elem) => document.querySelectorAll(elem);
+const text = selectAll('.preview__title');
 const main = select('main');
-const petItems = document.querySelectorAll('.projects__pet-link');
+const petItems = selectAll('.projects__pet-link');
+const toggleMenu = select('.header-page__toggle');
+const breakpoint = window.matchMedia('(min-width:1200px)');
+const breakpointModal = window.matchMedia('(min-width:320px)');
 // const mainLink = document.querySelector('.main-link');
 // const aboutUs = document.querySelector('.about-us-link');
 // const skills = document.querySelector('.skills-link');
 // const projects = document.querySelector('.projects-link');
 // const contacts = document.querySelector('.contacts-link');
-const links = document.querySelectorAll('.header-page__link');
+const links = selectAll('.header-page__link');
 
 const splitTextMy = (el) => {
   el.innerHTML = el.textContent.replace(/(\S*)/g, (m) => {
@@ -24,13 +28,15 @@ const splitTextMy = (el) => {
   return el;
 };
 
-let split = splitTextMy(text);
+text.forEach((elem) => {
+  splitTextMy(elem);
+});
 
 function random(min, max) {
   return (Math.random() * (max - min)) + min;
 }
 
-Array.from(split.querySelectorAll('.letter')).forEach((el, idx) => {
+Array.from(document.querySelectorAll('.letter')).forEach((el, idx) => {
   gsap.from(el, {
     opacity: 0,
     scale: 0.1,
@@ -58,28 +64,79 @@ ScrollTrigger.create({
   pin: true,
 });
 
-tl.to('.main-link', {color: '#163631', fontSize: '28px'});
-tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
-tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
-tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 50});
-tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 25});
-tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25});
-tl.to('.about-us-link', {color: '#ffffff', fontSize: '24px', duration: 25});
-tl.to('.skills-link', {color: '#163631', fontSize: '28px', duration: 50});
-tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25});
-tl.fromTo('.preview', {y: 0}, {y: '-100%', duration: 50});
-tl.to('.skills-link', {color: '#ffffff', fontSize: '24px', duration: 25});
-tl.to('.projects-link', {color: '#163631', fontSize: '28px', duration: 50});
-tl.fromTo('.projects', {x: '-100%'}, {x: '-200%', duration: 100});
-tl.fromTo('.projects__list-site', {x: 0}, {x: '-170%', duration: 400});
-tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 50}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-300%', opacity: 0}, {x: '0%', opacity: 1, stagger: 0.3, duration: 50}).to(petItems, {opacity: 0, display: 'none', duration: 300}).fromTo('.pet__picture', {x: '10%'}, {x: '130%', scale: 4.5, duration: 100});
-tl.to('.projects-link', {color: '#ffffff', fontSize: '24px', duration: 25, onUpdate: defaultOpacity});
-tl.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
-tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50});
+
+const breakpointChecker = () => {
+  console.log(breakpoint.matches);
+  if (breakpoint.matches) {
+    tl.to('.main-link', {color: '#163631', fontSize: '28px'});
+    tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
+    tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 25});
+    tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25});
+    tl.to('.about-us-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.skills-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25});
+    tl.fromTo('.preview', {y: 0}, {y: '-100%', duration: 50});
+    tl.to('.skills-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.projects-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.projects', {x: '-100%'}, {x: '-200%', duration: 100});
+    tl.fromTo('.projects__list-site', {x: 0}, {x: '-180%', duration: 400});
+    tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 50}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-300%', opacity: 0}, {x: '0%', opacity: 1, stagger: 0.3, duration: 50}).to(petItems, {opacity: 0, display: 'none', duration: 300}).fromTo('.pet__picture', {x: '10%'}, {x: '130%', scale: 4.5, duration: 100});
+    tl.to('.projects-link', {color: '#ffffff', fontSize: '24px', duration: 25, onUpdate: defaultOpacity});
+    tl.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
+    tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50});
+    console.log('desktop');
+  }
+
+  if (breakpointModal) {
+    tl.to('.main-link', {color: '#163631', fontSize: '28px'});
+    tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
+    tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 75});
+    tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25}).to('.presentation', {display: 'none'});
+    tl.to('.about-us-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.skills-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25});
+    tl.fromTo('.preview', {y: 0}, {y: '-100%', duration: 50});
+    tl.to('.skills-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.projects-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.projects', {x: '-100%'}, {x: '-200%', duration: 50});
+    tl.fromTo('.projects__list-site', {x: 0}, {x: '-125%', duration: 600});
+    tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-500%'}, {x: '0%', stagger: 0.3, duration: 100}).to(petItems, {scale: 0.05, duration: 100, delay: 2});
+    tl.to('.projects-link', {color: '#ffffff', fontSize: '24px', duration: 25, onUpdate: defaultOpacity});
+    tl.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
+    tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50});
+    console.log('mobile');
+  } else {
+    tl.to('.main-link', {color: '#163631', fontSize: '28px'});
+    tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
+    tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 75});
+    tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25}).to('.presentation', {display: 'none'});
+    tl.to('.about-us-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.skills-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25});
+    tl.fromTo('.preview', {y: 0}, {y: '-100%', duration: 50});
+    tl.to('.skills-link', {color: '#ffffff', fontSize: '24px', duration: 25});
+    tl.to('.projects-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.fromTo('.projects', {x: '-100%'}, {x: '-200%', duration: 100});
+    tl.fromTo('.projects__list-site', {x: 0}, {x: '-250%', duration: 800});
+    tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-300%', opacity: 0}, {x: '0%', opacity: 1, stagger: 0.3, duration: 50}).to(petItems, {opacity: 0, display: 'none', duration: 300}).fromTo('.pet__picture', {x: '10%'}, {x: '130%', scale: 4.5, duration: 100});
+    tl.to('.projects-link', {color: '#ffffff', fontSize: '24px', duration: 25, onUpdate: defaultOpacity});
+    tl.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
+    tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50});
+    console.log('tablet');
+  }
+};
+
+breakpointChecker();
 
 function animationContactTitle() {
-  gsap.fromTo('.contacts__title', {x: 0, opacity: 0}, {x: '50% - 200px', opacity: 1, duration: 2, delay: 1});
-  gsap.fromTo('.contacts__link-container', {x: '-100%', color: '#fff'}, {x: '50% - 250px', color: '#d67060', duration: 3});
+  gsap.fromTo('.contacts__title', {x: 0, opacity: 0}, {x: '10px', opacity: 1, duration: 2, delay: 1});
+  gsap.fromTo('.contacts__link-container', {x: '-100%', color: '#fff'}, {x: '10px', color: '#d67060', duration: 3});
   gsap.fromTo('.contacts__form', {opacity: 0}, {opacity: 1, delay: 2, duration: 2});
   console.log('hi');
 }
@@ -128,5 +185,9 @@ links.forEach((anchor) => {
       block: 'start',
     });
   });
+});
+
+toggleMenu.addEventListener('click', ()=>{
+  toggleMenu.classList.toggle('is-active');
 });
 
