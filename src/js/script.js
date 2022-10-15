@@ -203,7 +203,7 @@ mainLink.addEventListener('click', ()=>{
   gsap.to('.presentation', {display: 'block'});
   gsap.to('.skills', {opacity: 0}, {opacity: 1});
   gsap.to('.preview', {y: 0});
-  gsap.to('.projects', {x: '0%'});
+  gsap.to('.projects', {x: '-100%', y: '0'});
   gsap.to('.projects__list-site', {x: 0});
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%'});
@@ -217,7 +217,7 @@ aboutUs.addEventListener('click', ()=>{
   gsap.to('.presentation', {display: 'block'});
   gsap.to('.skills', {opacity: 0});
   gsap.to('.preview', {y: 0});
-  gsap.to('.projects', {x: '0%'});
+  gsap.to('.projects', {x: '-100%', y: '0'});
   gsap.to('.projects__list-site', {x: 0});
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%'});
@@ -232,7 +232,7 @@ skills.addEventListener('click', ()=>{
   gsap.fromTo('.skills', {opacity: 0}, {opacity: 1});
   tl.to('.skills', {opacity: 1});
   gsap.to('.preview', {y: 0});
-  gsap.to('.projects', {x: '0'});
+  gsap.to('.projects', {x: '-100%', y: '0'});
   gsap.to('.projects__list-site', {x: 0});
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%'});
@@ -246,7 +246,7 @@ projects.addEventListener('click', ()=>{
   gsap.to('.presentation', {display: 'block'});
   gsap.to('.preview', {y: 0});
   gsap.to('.projects-link', {color: '#163631', fontSize: '28px'});
-  gsap.fromTo('.projects', {x: '0%'}, {x: '-200%'});
+  gsap.fromTo('.projects', {x: '-100%', y: '0'}, {x: '-200%', y: '0', duration: 2});
   gsap.to('.projects__list-site', {x: 0});
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%'});
