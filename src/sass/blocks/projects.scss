@@ -96,6 +96,11 @@
   margin-bottom: 40px;
   text-align: center;
   font-size: 1.5em;
+
+  @include vp-1199 {
+    padding-top: 19px;
+    margin-bottom: 13px;
+  }
 }
 
 .projects__img-container {

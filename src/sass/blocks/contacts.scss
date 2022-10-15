@@ -25,7 +25,7 @@
   }
 
   @include vp-1199 {
-    padding: 140px 40px 80px;
+    padding: 77px 40px 80px;
   }
 
   @include vp-767 {
@@ -39,7 +39,7 @@
   text-align: center;
 
   @include vp-1199 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   @include vp-767 {
@@ -56,6 +56,10 @@
   margin: 0 auto 50px;
   text-align: center;
 
+  @include vp-1199 {
+    margin-bottom: 29px;
+  }
+
   @include vp-767 {
     font-size: 1.4em;
     margin-bottom: 30px;
@@ -71,7 +75,8 @@
   opacity: 0;
 
   @include vp-1199 {
-    font-size: 4em;
+    font-size: 3em;
+    margin-bottom: 15px;
   }
 
   @include vp-767 {
@@ -116,6 +121,7 @@
 
   @include vp-1199 {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
 
@@ -148,12 +154,12 @@
   @include vp-1199 {
     grid-column: 1/2;
     grid-row: 3/4;
+    justify-content: start;
   }
 
   @include vp-767 {
     font-size: 16px;
     padding: 0;
-    justify-content: start;
     min-height: fit-content;
   }
 }
@@ -229,6 +235,10 @@
   font-size: 18px;
   outline: none;
   padding: 8px;
+
+  @include vp-1199 {
+    height: 85px;
+  }
 
   @include vp-767 {
     width: 100px;
