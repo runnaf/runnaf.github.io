@@ -233,6 +233,8 @@ projects.addEventListener('click', ()=>{
   gsap.to('.presentation', {display: 'block'});
   gsap.to('.preview', {y: 0});
   gsap.to('.projects-link', {color: '#163631', fontSize: '28px'});
+  gsap.to('.projects', {backgroundColor: '#d67060'});
+  gsap.to('.projects__list-site', {x: '0', y: '0'});
   gsap.fromTo('.projects', {x: '-300%', y: '0'}, {x: '-200%', y: '0'});
   tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-500%'}, {x: '0%', stagger: 0.3, duration: 100}).to(petItems, {scale: 0.05, duration: 100, delay: 2});
   gsap.to('.contacts', {x: '-300%', y: '-300%'});
