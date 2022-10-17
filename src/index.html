@@ -229,35 +229,36 @@
           <p class="contacts__desk-link">Со мной можно связаться по почте:</p>
           <a class="contacts__link-email" href="mailto:runnaf@mail.ru">runnaf@mail.ru</a>
         </div>
-        <form action="https://formspree.io/f/xeqdkelq" method="POST" class="contacts__form">
-          <legend class="contacts__form-title">ОСТАВИТЬ СООБЩЕНИЕ :</legend>
-          <input type="hidden" name="_language" value="ru" />
-          <div class="contacts__container">
-            <div class="contacts__field-container">
-              <label class="contacts__field-desc" for="name">
-                Ваше имя:
-              </label>
-              <input type="text" name="name" class="contacts__field" id="name" required>
+        <div class="contacts__wrapper">
+          <form action="https://formspree.io/f/xeqdkelq" method="POST" class="contacts__form">
+            <legend class="contacts__form-title">ОСТАВИТЬ СООБЩЕНИЕ :</legend>
+            <input type="hidden" name="_language" value="ru" />
+            <div class="contacts__container">
+              <div class="contacts__field-container">
+                <label class="contacts__field-desc" for="name">
+                  Ваше имя:
+                </label>
+                <input type="text" name="name" class="contacts__field" id="name" required>
+              </div>
+              <div class="contacts__field-container">
+                <label class="contacts__field-desc" for="email">
+                  Ваш email:
+                </label>
+                <input type="email" name="email" class="contacts__field" id="email" required>
+              </div>
+              <div class="contacts__field-container contacts__field-container--text">
+                <label class="contacts__field-desc" for="text">
+                  Ваше сообщение:
+                </label>
+                <textarea name="message" class="contacts__field" id="text" required></textarea>
+              </div>
+              <button class="contacts__button" type="submit">Отправить</button>
             </div>
-            <div class="contacts__field-container">
-              <label class="contacts__field-desc" for="email">
-                Ваш email:
-              </label>
-              <input type="email" name="email" class="contacts__field" id="email" required>
-            </div>
-            <div class="contacts__field-container contacts__field-container--text">
-              <label class="contacts__field-desc" for="text">
-                Ваше сообщение:
-              </label>
-              <textarea name="message" class="contacts__field" id="text" required></textarea>
-            </div>
-            <button class="contacts__button" type="submit">Отправить</button>
+          </form>
+          <div class="contacts__information">
+            <a class="contacts__information-button" href="./resume.pdf" target="_blank" download>Скачать резюме</a>
+            <a class="contacts__information-button" target="_blank" download>Скачать сертификаты</a>
           </div>
-
-        </form>
-        <div class="contacts__information">
-          <a class="contacts__information-button" href="./resume.pdf" target="_blank" download>Скачать резюме</a>
-          <a class="contacts__information-button" target="_blank" download>Скачать сертификаты</a>
         </div>
       </section>
     </main>

@@ -119,10 +119,11 @@ const breakpointChecker = () => {
     tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
     tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 200});
     tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25});
-    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 100});
+    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 75});
+    tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25}).to('.presentation', {display: 'none'});
     tl.to('.about-us-link', {color: '#ffffff', fontSize: '24px', duration: 25});
     tl.to('.skills-link', {color: '#163631', fontSize: '28px', duration: 50});
-    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25, delay: 2}).to('.presentation', {display: 'none'});
+    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25});
     tl.fromTo('.preview', {y: 0}, {y: '-100%', duration: 50});
     tl.to('.skills-link', {color: '#ffffff', fontSize: '24px', duration: 25});
     tl.to('.projects-link', {color: '#163631', fontSize: '28px', duration: 50});
