@@ -11,8 +11,8 @@ const main = select('main');
 const petItems = selectAll('.projects__pet-link');
 const toggleMenu = select('.header-page__toggle');
 const breakpoint = window.matchMedia('(min-width:1200px)');
-const breakpointModal = window.matchMedia('(min-width:320px)');
-const breakpointTablet = window.matchMedia('(min-width:320px)');
+const breakpointMobile = window.matchMedia('(min-width: 320px)');
+const breakpointTablet = window.matchMedia('(min-width: 768px)');
 const mainLink = document.querySelector('.main-link');
 const aboutUs = document.querySelector('.about-us-link');
 const skills = document.querySelector('.skills-link');
@@ -65,9 +65,9 @@ ScrollTrigger.create({
   pin: true,
 });
 
-
 const breakpointChecker = () => {
   if (breakpoint.matches) {
+    gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
     tl.to('.main-link', {color: '#163631', fontSize: '28px'});
     tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
     tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
@@ -89,7 +89,8 @@ const breakpointChecker = () => {
     return;
   }
 
-  if (breakpointTablet) {
+  if (breakpointTablet.matches) {
+    gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
     tl.to('.main-link', {color: '#163631', fontSize: '28px'});
     tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
     tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
@@ -111,25 +112,26 @@ const breakpointChecker = () => {
     return;
   }
 
-  if (breakpointModal) {
+  if (breakpointMobile.matches) {
+    gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
     tl.to('.main-link', {color: '#163631', fontSize: '28px'});
     tl.fromTo('.preview', {opacity: 1}, {opacity: 0.03, duration: 25});
     tl.to('.main-link', {color: '#ffffff', fontSize: '24px', duration: 25});
-    tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 50});
-    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 75});
-    tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25}).to('.presentation', {display: 'none'});
+    tl.to('.about-us-link', {color: '#163631', fontSize: '28px', duration: 200});
+    tl.fromTo('.preview', {opacity: 0.03}, {opacity: 0, duration: 25});
+    tl.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1, duration: 100});
     tl.to('.about-us-link', {color: '#ffffff', fontSize: '24px', duration: 25});
     tl.to('.skills-link', {color: '#163631', fontSize: '28px', duration: 50});
-    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25});
+    tl.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 25, delay: 2}).to('.presentation', {display: 'none'});
     tl.fromTo('.preview', {y: 0}, {y: '-100%', duration: 50});
     tl.to('.skills-link', {color: '#ffffff', fontSize: '24px', duration: 25});
     tl.to('.projects-link', {color: '#163631', fontSize: '28px', duration: 50});
     tl.fromTo('.projects', {x: '-300%'}, {x: '-200%', duration: 50});
-    tl.fromTo('.projects__list-site', {x: 0}, {x: '-125%', duration: 600});
-    tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-500%'}, {x: '0%', stagger: 0.3, duration: 100}).to(petItems, {scale: 0.05, duration: 100, delay: 2});
+    tl.fromTo('.projects__list-site', {x: 0}, {x: '-140%', duration: 1000});
+    tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-600%'}, {x: '0%', duration: 200, delay: 5}).to(petItems, {scale: 0.05, duration: 100, delay: 2});
     tl.to('.projects-link', {color: '#ffffff', fontSize: '24px', duration: 25, onUpdate: defaultOpacity});
     tl.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
-    tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50});
+    tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50}).to('.projects-link', {color: '#ffffff', fontSize: '24px'});
     return;
   }
 };
@@ -174,6 +176,8 @@ function getDefaultValues(elem, items = links) {
     item.style.fontSize = '24px';
   });
 
+  mainLink.classList.remove('active');
+  toggleMenu.classList.remove('is-active');
   elem.style.color = '#163631';
   elem.style.fontSize = '28px';
 }
@@ -183,8 +187,7 @@ toggleMenu.addEventListener('click', ()=>{
 });
 
 mainLink.addEventListener('click', ()=>{
-  getDefaultValues(mainLink);
-
+  gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
   gsap.to('.preview', {opacity: 1});
   gsap.to('.about-us', {x: '-100%', y: '-100%', opacity: 1});
   gsap.to('.presentation', {display: 'block'});
@@ -195,10 +198,11 @@ mainLink.addEventListener('click', ()=>{
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%', scale: 1});
   gsap.to('.contacts', {x: '-300%', y: '-300%'});
+
+  getDefaultValues(mainLink);
 });
 
 aboutUs.addEventListener('click', ()=>{
-  getDefaultValues(aboutUs);
   gsap.fromTo('.preview', {opacity: 1}, {opacity: 0});
   gsap.fromTo('.about-us', {x: '-100%', y: '-100%', opacity: 0}, {x: '-100%', y: '0', opacity: 1});
   gsap.to('.presentation', {display: 'block'});
@@ -209,10 +213,11 @@ aboutUs.addEventListener('click', ()=>{
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%', scale: 1});
   gsap.to('.contacts', {x: '-300%', y: '-300%'});
+
+  getDefaultValues(aboutUs);
 });
 
 skills.addEventListener('click', ()=>{
-  getDefaultValues(skills);
   gsap.to('.presentation', {display: 'none'});
   gsap.to('.preview', {opacity: 0});
   gsap.to('.about-us', {x: '-100%', y: '0', opacity: 1});
@@ -224,10 +229,11 @@ skills.addEventListener('click', ()=>{
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%', scale: 1});
   gsap.to('.contacts', {x: '-300%', y: '-300%'});
+
+  getDefaultValues(skills);
 });
 
 projects.addEventListener('click', ()=>{
-  getDefaultValues(projects);
   gsap.to('.preview', {opacity: 0});
   gsap.to('.about-us', {x: '-100%', y: '0', opacity: 1});
   gsap.to('.presentation', {display: 'block'});
@@ -238,10 +244,19 @@ projects.addEventListener('click', ()=>{
   gsap.fromTo('.projects', {x: '-300%', y: '0'}, {x: '-200%', y: '0'});
   tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-500%'}, {x: '0%', stagger: 0.3, duration: 100}).to(petItems, {scale: 0.05, duration: 100, delay: 2});
   gsap.to('.contacts', {x: '-300%', y: '-300%'});
+
+  getDefaultValues(projects);
+
+  // window.addEventListener('scroll', function() {
+  //   tl.fromTo('.projects__list-site', {x: 0}, {x: '-125%', duration: 600});
+  //   tl.fromTo('.projects__pet', {x: '0', y: '0'}, {x: '0', y: '-100%', duration: 100}).to('.projects', {backgroundColor: '#163631', duration: 50}).to('.projects-link', {color: '#d67060', duration: 50}).fromTo(petItems, {x: '-500%'}, {x: '0%', stagger: 0.3, duration: 100}).to(petItems, {scale: 0.05, duration: 100, delay: 2});
+  //   tl.to('.projects-link', {color: '#ffffff', fontSize: '24px', duration: 25, onUpdate: defaultOpacity});
+  //   tl.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
+  //   tl.to('.contacts-link', {color: '#163631', fontSize: '28px', duration: 50});
+  // });
 });
 
 contacts.addEventListener('click', ()=>{
-  getDefaultValues(contacts);
   gsap.to('.preview', {opacity: 0});
   gsap.to('.about-us', {x: '-100%', y: '0', opacity: 1});
   gsap.to('.presentation', {display: 'block'});
@@ -251,6 +266,8 @@ contacts.addEventListener('click', ()=>{
   gsap.to('.projects__list-site', {x: 0});
   gsap.to('.projects__pet', {x: '0', y: '0'});
   gsap.to(petItems, {x: '-500%', scale: 1});
+  gsap.to('.projects-link', {color: '#ffffff', fontSize: '24px'});
   gsap.fromTo('.contacts', {x: '-300%', y: '-300%'}, {y: 0, onUpdate: animationContactTitle});
+  getDefaultValues(contacts);
 });
 

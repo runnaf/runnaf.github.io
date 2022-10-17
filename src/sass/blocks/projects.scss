@@ -14,7 +14,7 @@
   margin-top: 100px;
   margin-bottom: 0;
 
-  @include vp-1199 {
+  @include vp-1299 {
     font-size: 4em;
   }
 
@@ -57,6 +57,7 @@
 
   @include vp-767 {
     padding-left: 0;
+    margin-left: 160px;
   }
 }
 
@@ -97,9 +98,13 @@
   text-align: center;
   font-size: 1.5em;
 
-  @include vp-1199 {
+  @include vp-1299 {
     padding-top: 19px;
     margin-bottom: 13px;
+  }
+
+  @include vp-767 {
+    min-height: 80px;
   }
 }
 
@@ -115,6 +120,7 @@
 
   @include vp-767 {
     width: 332px;
+    height: 224px;
   }
 }
 
@@ -128,7 +134,7 @@
   background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
 
   @include vp-767 {
-    height: 66%;
+    height: 98%;
   }
 }
 
@@ -136,6 +142,7 @@
   width: 50vw;
   min-width: 50%;
   background-color: #d67060;
+  overflow: auto;
 
   @include vp-767 {
     min-width: 25%;
@@ -161,7 +168,7 @@
 
   @include vp-767 {
     margin: 0;
-    height: 66%;
+    height: 98%;
   }
 }
 
@@ -292,14 +299,14 @@
   color: transparent;
   -webkit-text-stroke: 1px #ffffff;
 
-  @include vp-1199 {
+  @include vp-1299 {
     color: #d67060;
   }
 
   &:hover {
     color: #d67060;
 
-    @include vp-1199 {
+    @include vp-1299 {
       -webkit-text-stroke: 1px #d67060;
     }
   }

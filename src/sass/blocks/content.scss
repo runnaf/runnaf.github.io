@@ -50,6 +50,7 @@
   width: fit-content;
   margin-left: auto;
   padding-right: 80px;
+  overflow: auto;
 
   @include vp-767 {
     padding-right: 10px;
@@ -64,12 +65,12 @@
   width: fit-content;
   margin-left: auto;
 
-  @include vp-1199 {
+  @include vp-1299 {
     margin-bottom: 15px;
   }
 
   @include vp-767 {
-    margin-bottom: 12px;
+    margin-bottom: 23px;
   }
 }
 
@@ -86,12 +87,13 @@
   width: fit-content;
   margin-left: auto;
 
-  @include vp-1199 {
+  @include vp-1299 {
     font-size: 23px;
   }
 
   @include vp-767 {
     font-size: 23px;
+    color: #ffffff;
   }
 }
 
