@@ -29,6 +29,7 @@ const two = preview.scrollHeight + presentation.scrollHeight + skillsSection.scr
 const three = preview.scrollHeight + presentation.scrollHeight + skillsSection.scrollHeight + projectsSection.offsetWidth;
 const COLOR_DEFAULT = '#ffffff';
 const COLOR_GREEN = '#658580';
+const contactButton = select('.contacts__information-button');
 
 const splitTextMy = (el) => {
   el.innerHTML = el.textContent.replace(/(\S*)/g, (m) => {
@@ -179,6 +180,23 @@ const breakpointChecker = () => {
       getDefaultValues(contacts);
     });
 
+    contactButton.addEventListener('click', () => {
+      gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
+      gsap.to('.preview', {opacity: 1, duration: 1.5});
+      gsap.to('.about-us', {x: '-100%', y: '-100%', opacity: 1});
+      gsap.to('.presentation', {display: 'block'});
+      gsap.to('.skills', {opacity: 0}, {opacity: 1});
+      gsap.to('.preview', {y: 0});
+      gsap.to('.projects', {x: 0, y: '0', backgroundColor: '#d67060'});
+      gsap.to('.projects__list-site', {x: 0});
+      gsap.to('.projects__pet', {x: '0', y: '0'});
+      gsap.to(petItems, {x: '-500%', scale: 1});
+      gsap.to('.contacts', {x: '-300%', y: '-300%'});
+      gsap.to(window, {scrollTo: {y: 0, x: 0}});
+
+      getDefaultValues(mainLink);
+    });
+
     return;
   }
 
@@ -285,6 +303,23 @@ const breakpointChecker = () => {
       gsap.to(window, {scrollTo: {y: body.scrollHeight * 20}});
 
       getDefaultValues(contacts);
+    });
+
+    contactButton.addEventListener('click', () => {
+      gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
+      gsap.to('.preview', {opacity: 1, duration: 1.5});
+      gsap.to('.about-us', {x: '-100%', y: '-100%', opacity: 1});
+      gsap.to('.presentation', {display: 'block'});
+      gsap.to('.skills', {opacity: 0});
+      gsap.to('.preview', {y: 0});
+      gsap.to('.projects', {x: 0, y: '0', backgroundColor: '#d67060'});
+      gsap.to('.projects__list-site', {x: 0});
+      gsap.to('.projects__pet', {x: '0', y: '0'});
+      gsap.to(petItems, {x: '-500%', scale: 1});
+      gsap.to('.contacts', {x: '-300%', y: '-300%'});
+      gsap.to(window, {scrollTo: {y: 0, x: 0}});
+
+      getDefaultValues(mainLink, '#658580');
     });
 
     return;
@@ -395,6 +430,22 @@ const breakpointChecker = () => {
       closingTheMenu();
 
       getDefaultValues(contacts, COLOR_GREEN);
+    });
+
+    contactButton.addEventListener('click', () => {
+      gsap.to('.main-link', {color: '#163631', fontSize: '28px'});
+      gsap.to('.preview', {opacity: 1, duration: 1.5});
+      gsap.to('.about-us', {x: '-100%', y: '-100%', opacity: 1});
+      gsap.to('.presentation', {display: 'block'});
+      gsap.to('.skills', {opacity: 0}, {opacity: 1});
+      gsap.to('.preview', {y: 0});
+      gsap.to('.projects', {x: 0, y: '0', backgroundColor: '#d67060'});
+      gsap.to('.projects__list-site', {x: 0});
+      gsap.to('.projects__pet', {x: '0', y: '0'});
+      gsap.to('.contacts', {x: '-300%', y: '-300%'});
+      gsap.to(window, {scrollTo: {y: 0, x: 0}});
+
+      getDefaultValues(mainLink, COLOR_GREEN);
     });
 
     return;
