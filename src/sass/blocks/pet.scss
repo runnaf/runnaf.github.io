@@ -82,6 +82,10 @@
   -webkit-text-stroke: 1px var(--c-white);
   color: transparent;
 
+  &:hover {
+    color: #ffffff;
+  }
+
   @include vp-1299 {
     font-size: 23px;
     -webkit-text-stroke: 1px #d67060;
@@ -92,10 +96,15 @@
     font-size: 23px;
     color: #ffffff;
     -webkit-text-stroke: 1px #ffffff;
+
+    &:hover {
+      -webkit-text-stroke: 1px #d67060;
+      color: #d67060;
+    }
   }
 }
 
-.pet img {
+img {
   inline-size: 100%;
   block-size: 100%;
   display: block;
