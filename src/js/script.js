@@ -22,7 +22,6 @@ const body = select('body');
 const links = selectAll('.header-page__link');
 const preview = select('.preview');
 const presentation = select('.presentation');
-// const aboutUsSection = select('.about-us');
 const skillsSection = select('.skills');
 const projectsSection = select('.projects');
 const one = preview.scrollHeight;
@@ -413,7 +412,7 @@ function animationContactTitle() {
 petItems.forEach((item) => {
   item.addEventListener('mouseover', () => {
     const idItem = item.getAttribute('id');
-    const imgesPet = selectAll('.img-select');
+    const imgesPet = selectAll('.pet__img-select');
     imgesPet.forEach((img) => {
       const imgId = img.getAttribute('data-id');
       if (Number(imgId) === Number(idItem)) {
@@ -422,12 +421,12 @@ petItems.forEach((item) => {
           itemImg.classList.remove('is-active');
         });
         img.classList.add('is-active');
-        select('.tv').classList.add('js-not-after');
+        select('.pet__tv-container').classList.add('js-not-after');
       }
     });
   });
   item.addEventListener('mouseout', () => {
-    select('.tv').classList.remove('js-not-after');
+    select('.pet__tv-container').classList.remove('js-not-after');
   });
 });
 
