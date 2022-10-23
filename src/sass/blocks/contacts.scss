@@ -215,7 +215,7 @@
   }
 }
 
-.contacts__information-button,
+.contacts__information-link,
 .contacts button {
   font-family: "Neucha", cursive;
   padding: 7px 20px;
@@ -284,6 +284,20 @@
   gap: 25px;
   margin: auto;
   flex: 0.5;
+  position: relative;
+  width: 100%;
+}
+
+.contacts__information-button[type="button"] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto 20px auto 0;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @keyframes grain {
