@@ -7,6 +7,7 @@
   padding-top: calc(108px + 50px);
   padding-left: 80px;
   padding-right: 80px;
+  transform: translate(-100%, -100%);
 
   @include vp-1299 {
     padding: 77px 40px 20px;

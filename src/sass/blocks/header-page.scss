@@ -7,6 +7,42 @@
   right: 0;
   left: 0;
   margin: 0 auto;
+
+  @include vp-767 {
+    padding: 0;
+  }
+}
+
+.header-page__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+
+  @include vp-767 {
+    position: relative;
+  }
+}
+
+.header-page__logo-link {
+  @include vp-767 {
+    margin-left: 20px;
+    z-index: 100;
+  }
+}
+
+.header-page__logo-link img {
+  width: 100%;
+  height: auto;
+
+  @include vp-1299 {
+    width: 45px;
+  }
+
+  @include vp-767 {
+    width: 39px;
+  }
 }
 
 .header-page__toggle {
@@ -18,10 +54,12 @@
     width: 76px;
     height: 50px;
     padding: 0;
+    margin-right: 20px;
     border: 1px solid transparent;
     background-color: inherit;
     cursor: pointer;
     outline: none;
+    z-index: 100;
 
     &::before,
     &::after {
@@ -31,7 +69,7 @@
       top: calc(50% - 2px);
       width: 25px;
       height: 2px;
-      background-color: hsla(0, 0%, 100%, 1);
+      background-color: #ffffff;
       border-radius: 1.5px;
     }
 
@@ -54,6 +92,7 @@
     right: 0;
     left: 0;
     margin: auto;
+    background-color: #163631;
   }
 
   &::before {
@@ -64,34 +103,6 @@
 .header-page__toggle.is-active + .header-page__list {
   @include vp-767 {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 40px;
-
-    & li {
-      margin-bottom: 5px;
-    }
-  }
-}
-
-.header-page__navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
-}
-
-.header-page__logo-link img {
-  width: 100%;
-  height: auto;
-
-  @include vp-1299 {
-    width: 45px;
-  }
-
-  @include vp-767 {
-    width: 39px;
   }
 }
 
@@ -103,19 +114,19 @@
 
   @include vp-767 {
     display: none;
-    background-image: linear-gradient(to bottom, #728D86, #819B96);
+    // background-image: linear-gradient(to bottom, rgba(214, 112, 96, 0.8), rgba(129, 155, 150, 0.8));
     padding-bottom: 40px;
-    // position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
 
-    // &::after {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: ;
-    //   content: '';
-    // #728D86 #819B96}
+    & li {
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -150,13 +161,12 @@
   }
 
   @include vp-1299 {
-    font-size: 22px;
     padding: 10px;
   }
 
   @include vp-767 {
-    font-size: 24px;
     padding: 7px;
+    color: #658580;
   }
 }
 

@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   color: #ffffff;
+  transform: translate(-300%, -300%);
 
   &::after {
     position: absolute;
@@ -35,6 +36,9 @@
 
 .contacts__wrapper {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%
 }
 
 .contacts__desk-link {
@@ -92,8 +96,10 @@
   font-family: "Neucha", cursive;
   font-size: 2em;
   color: #ffffff;
-  opacity: 0;
   margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .contacts__form-title {
@@ -101,6 +107,9 @@
   line-height: 1.2;
   margin-left: auto;
   margin-right: auto;
+  flex: 0.5;
+  display: flex;
+  align-items: center;
 
   @include vp-1299 {
     font-size: 1em;
@@ -123,6 +132,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  margin: auto;
 
   @include vp-1299 {
     grid-template-columns: 1fr;
@@ -172,7 +182,7 @@
 }
 
 .contacts__field-desc {
-  padding: 0 35px 0 0;
+  padding: 0 15px 0 0;
   line-height: 1.2;
   color: #d67060;
   font-size: 36px;
@@ -218,6 +228,7 @@
   display: block;
   cursor: pointer;
   text-align: center;
+  height: fit-content;
 
   &:hover {
     color: #163631;
@@ -257,7 +268,8 @@
 
   @include vp-1299 {
     height: 85px;
-    width: 350px;
+    width: 45%;
+    min-width: 150px;
   }
 
   @include vp-767 {
@@ -270,18 +282,20 @@
   display: grid;
   grid-template-columns: repeat(2, min-content);
   gap: 25px;
+  margin: auto;
+  flex: 0.5;
 }
 
 @keyframes grain {
   0% {transform: translate(0, 0)}
   100% {transform: translate(0, 0)}
   10% { transform:translate(-15%, -10%)}
-  20% { transform:translate(-20%, -5%) }
-  30% { transform:translate(7%, -25%) }
-  40% { transform:translate(-5%, 25%) }
-  50% { transform:translate(-20%, 10%) }
-  60% { transform:translate(25%, 0%) }
-  70% { transform:translate(0%, 15%) }
-  80% { transform:translate(3%, 35%) }
-  90% { transform:translate(-10%, 10%) }
+  20% { transform:translate(-20%, -5%)}
+  30% { transform:translate(7%, -25%)}
+  40% { transform:translate(-5%, 25%)}
+  50% { transform:translate(-20%, 10%)}
+  60% { transform:translate(25%, 0%)}
+  70% { transform:translate(0%, 15%)}
+  80% { transform:translate(3%, 35%)}
+  90% { transform:translate(-10%, 10%)}
 }
