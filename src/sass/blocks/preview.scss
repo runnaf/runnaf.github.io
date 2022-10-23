@@ -7,7 +7,7 @@
   padding-right: 80px;
   width: 100vw;
 
-  @include vp-1199 {
+  @include vp-1299 {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -34,7 +34,7 @@
   text-align: center;
   letter-spacing: 0.15em;
 
-  @include vp-1199 {
+  @include vp-1299 {
     font-size: 42px;
   }
 
@@ -59,7 +59,7 @@
   transition: transform 0.5s ease-in, fill 0.8s ease-in;
   height: auto;
 
-  @include vp-1199 {
+  @include vp-1299 {
     width: 75px;
   }
 

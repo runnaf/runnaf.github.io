@@ -1,5 +1,6 @@
 .skills {
   margin-top: 50px;
+  overflow: auto;
 
   @include vp-767 {
     margin-top: 10px;

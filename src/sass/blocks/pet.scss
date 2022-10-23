@@ -17,46 +17,47 @@
   --c-dark-2: #101010;
 }
 
-.about-us-link.is-active {
-  color: #163631;
-  font-size: 28px;
-}
-
-.content {
+.pet {
   block-size: 100%;
   display: block;
   position: relative;
 }
 
-.scroll-content {
-  position: relative;
+.pet__content {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  margin: auto 0;
   block-size: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  padding: 40px;
+  height: fit-content;
+  padding: 12px;
 }
 
-.item-container-full {
-  position: absolute;
-  right: 0;
-  height: var(--item-size);
-  overflow: hidden;
-}
-
-.item-container-transparent {
+.pet__list {
   z-index: 100;
   width: fit-content;
   margin-left: auto;
   padding-right: 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @include vp-1299 {
+    overflow: auto;
+  }
 
   @include vp-767 {
     padding-right: 10px;
   }
 }
 
-.item {
+.pet__item {
   z-index: 100;
   line-height: 0.95;
   display: flex;
@@ -64,20 +65,13 @@
   width: fit-content;
   margin-left: auto;
 
-  @include vp-1199 {
-    margin-bottom: 15px;
-  }
-
-  @include vp-767 {
-    margin-bottom: 12px;
+  @include vp-1299 {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
-.title-full {
-  color: var(--c-white);
-}
-
-.title {
+.pet__link {
   font-size: var(--font-xl);
   text-transform: uppercase;
   text-align: right;
@@ -85,29 +79,30 @@
   line-height: 1;
   width: fit-content;
   margin-left: auto;
+  -webkit-text-stroke: 1px var(--c-white);
+  color: transparent;
 
-  @include vp-1199 {
+  @include vp-1299 {
     font-size: 23px;
+    -webkit-text-stroke: 1px #d67060;
+    color: #d67060;
   }
 
   @include vp-767 {
     font-size: 23px;
+    color: #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
   }
 }
 
-.title-transparent {
-  -webkit-text-stroke: 1px var(--c-white);
-  color: transparent;
-}
-
-img {
+.pet img {
   inline-size: 100%;
   block-size: 100%;
   display: block;
   object-fit: cover;
 }
 
-.tv {
+.pet__tv-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -142,7 +137,7 @@ img {
   }
 }
 
-.tv.js-not-after {
+.pet__tv-container.js-not-after {
   background-color: transparent;
 
   &::after {
@@ -165,7 +160,7 @@ img {
   }
 }
 
-.picture {
+.pet__picture-container {
   width: 95%;
   height: 95%;
   z-index: -1;
@@ -186,7 +181,7 @@ img {
   margin-bottom: 40px;
 }
 
-.img-select {
+.pet__img-select {
   display: none;
   opacity: 0;
   transition: all 0.5s ease-in-out;
@@ -194,7 +189,7 @@ img {
   height: 447px;
 }
 
-.img-select.is-active {
+.pet__img-select.is-active {
   display: block;
   opacity: 1;
 }
