@@ -1,0 +1,47 @@
+.register-form {
+  display: grid;
+  grid-row-gap: 40px;
+}
+
+.register-form input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #B6B6B6;
+    height: 49px;
+    width: 422px;
+    font-size: 18px;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+  }
+  
+  .register-form__submit {
+      grid-row: 3/4;
+      height: 58px;
+      min-width: fit-content;
+      width: 248px;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #FCC066;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat';
+      font-size: 24px;
+      line-height: 30px;
+      color: black;
+      margin-top: 50px;
+      cursor: pointer;
+      margin-bottom: 70px;
+  }
+
+  .register-form__submit:hover {
+    background-color: #FF9900;
+  }
+  
+  .register-form__submit:disabled {
+      background-color: #B6B6B6;
+      border: none;
+      outline: none;
+      cursor: auto;
+  }

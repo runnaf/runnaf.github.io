@@ -1,0 +1,16 @@
+.sing-up__image {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  object-fit: contain;
+  max-height: 1000px;
+}
+
+@media (max-width: 768px) {
+  .sing-up__image {
+    display: none;
+  }
+}

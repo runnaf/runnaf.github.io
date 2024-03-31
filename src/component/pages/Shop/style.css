@@ -1,0 +1,101 @@
+.filter__cards {
+  margin: 0;
+  margin-bottom: 70px;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+.filter__cards img {
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+
+.filter__cards li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter__cards p {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.filter {
+  margin-bottom: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.filter > label {
+  padding: 0 10px;
+  margin-right: 10px;
+}
+
+.filter label:hover {
+  color: #FF9900;
+}
+
+.filter label:active {
+  color: #FCC066;
+}
+
+.filter__select {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.filter__select label {
+  margin: 0 30px;
+}
+
+
+
+@media (max-width: 1500px) {
+  .filter__cards {
+    margin-bottom: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .filter {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .filter fieldset {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .filter__select {
+    margin-left: 0;
+  }
+
+  .filter__select label {
+    margin-left: 0;
+  }
+
+  .filter__cards {
+    margin-bottom: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter__cards {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+}

@@ -1,0 +1,36 @@
+.radioContainer {
+  display: flex;
+  align-items: center;
+}
+
+.radioLabel {  
+  justify-content: space-between;
+}
+
+.order__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.order__item img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+  .order__item img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .order__item img {
+    width: 120px;
+  }
+}

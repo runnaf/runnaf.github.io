@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .header .info {
+      width: 100%;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .info li {
+        margin-bottom: 40px;
+    }
+  }

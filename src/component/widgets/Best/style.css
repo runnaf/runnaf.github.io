@@ -1,0 +1,152 @@
+.best {
+  background-color: hsla(220, 5%, 96%, 1);
+  display: grid;
+  grid-template-columns: 516px 1fr;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.best__container {
+  padding-left: 141px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.best h2 {
+  margin-left: 0;
+  text-align: left;
+}
+
+.best h2::before {
+  display: none;
+}
+
+.best__sale {
+  font-size: 24px;
+  line-height: 29px;
+  font-variant: small-caps;
+  color: #FE0202;
+}
+
+.best p {
+  margin: 0;
+  margin-bottom: 13px;
+}
+
+.best__price {
+  font-size: 24px;
+  line-height: 29px;
+  text-decoration-line: line-through;
+  font-variant: small-caps;
+}
+
+.best .best__price--new {
+  font-size: 36px;
+  line-height: 44px; 
+  text-decoration: none;
+  font-variant: small-caps;
+  color: #FE0101;
+  margin-left: 10px;
+}
+
+.best__button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.best__button-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+}
+
+.best__button-container a > svg {
+  width: 49px;
+  height: auto;
+}
+
+.best__button-cart {
+  margin-left: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.best__button-cart:hover path {
+  fill: #FF9900;
+}
+
+.best__button-cart:active path {
+  fill: #FCC066;
+}
+
+@media (max-width: 1200px) {
+  .best {
+    grid-template-columns: 300px 1fr;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .best img {
+    width: 250px;
+    height: auto;
+  }
+  
+  .best__container {
+    padding-left: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .best__sale {
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .best__price {
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .best .best__price--new {
+    font-size: 26;
+    line-height: 1.2; 
+    margin-left: 5px;
+  }
+
+  .best__button-container {
+    margin-bottom: 20px;
+  }
+  
+  .best__button-container a {
+    width: 70px;
+  }
+  
+  .best__button-container a > svg {
+    width: 38px;
+  }
+  
+  .best__button-cart {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .best {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .best__container  {
+    padding: 0;
+  }
+}

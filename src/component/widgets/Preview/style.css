@@ -1,0 +1,243 @@
+.preview {
+  position: relative;
+  min-height: 750px;
+  padding-top: 134px;
+}
+
+.preview__background {
+  position: absolute;
+  top: 10px;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  max-height: 800px;
+  left: 50%;  
+  transition: background-image 0.05s ease-in-out 0.1s;
+  animation-name: Appearance;
+  animation-duration: 5s;
+  z-index: -1;
+}
+
+@-webkit-keyframes Appearance {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+
+@-o-keyframes Appearance {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+
+@-moz-keyframes Appearance {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+
+@keyframes Appearance {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+
+.preview a {
+  text-decoration: none;
+  padding: 20px 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsla(0, 0%, 0%, 1);
+  animation-name: circle-to-square;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+@keyframes circle-to-square {
+  0% {
+    width: 50px;
+    height: 50px;
+    background-color: #FCC066;
+    opacity: 0.3;
+  }
+  70% {
+    width: 200px;
+    height: 50px;
+    background-color: #C1DDE1;
+    border-radius: 10%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 200px;
+    height: 60px;
+    background-color: #85D8E3;
+    border-radius: 0;
+    opacity: 1;
+  }
+}
+
+.preview a:hover {
+  background-color: #85D8E3;
+}
+
+.preview a:active {
+  background-color: #00DFFF;
+}
+
+.preview__title {
+  position: relative;
+  font-family: 'Cormorant Garamond';
+  font-size: 48px;
+  line-height: 65px;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  max-width: 607px;
+  padding-bottom: 13px;
+}
+
+.preview__title::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 404px;
+  height: 1px;
+  background-color: hsla(0, 0%, 0%, 1);
+}
+
+.preview p {
+  margin: 0;
+  max-width: 500px;
+  margin-bottom: 55px;
+}
+
+@media (max-width: 1200px) {	
+  .preview {
+    position: relative;
+    min-height: 550px;
+    padding-top: 100px;
+  }
+
+  .preview a {
+    padding: 14px 25px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  @keyframes circle-to-square {
+    0% {
+      width: 35px;
+      height: 35px;
+      background-color: #FCC066;
+      opacity: 0.3;
+    }
+    70% {
+      width: 100px;
+      height: 40px;
+      background-color: #C1DDE1;
+      border-radius: 10%;
+      opacity: 0.8;
+    }
+    100% {
+      width: 150px;
+      height: 50px;
+      background-color: #85D8E3;
+      border-radius: 0;
+      opacity: 1;
+    }
+  }
+  
+  .preview__title {
+    font-size: 32px;
+    line-height: 1.2;
+    max-width: 500px;
+    padding-bottom: 10px;
+  }
+  
+  .preview__title::before {
+    width: 300px;
+    height: 1px;
+    background-color: hsla(0, 0%, 0%, 1);
+  }
+  
+  .preview p {
+    margin: 0;
+    max-width: 350px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .preview {
+    position: relative;
+    min-height: 550px;
+    padding-top: 80px;
+  }
+  
+  .preview a {
+    padding: 10px 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+  
+  @keyframes circle-to-square {
+    0% {
+      width: 30px;
+      height: 30px;
+      background-color: #FCC066;
+      opacity: 0.3;
+    }
+    70% {
+      width: 70px;
+      height: 40px;
+      background-color: #C1DDE1;
+      border-radius: 10%;
+      opacity: 0.8;
+    }
+    100% {
+      width: 150px;
+      height: 50px;
+      background-color: #85D8E3;
+      border-radius: 10%;
+      opacity: 1;
+    }
+  }
+  
+  .preview__title {
+    font-size: 28px;
+    line-height: 1.2;
+    max-width: 300px;
+    padding-bottom: 10px;
+  }
+  
+  .preview__title::before {
+    width: 200px;
+    height: 1px;
+    background-color: hsla(0, 0%, 0%, 1);
+  }
+  
+  .preview p {
+    margin: 0;
+    max-width: 200px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .preview__background {
+    width: calc(100% - 20%);
+    background-position: -100px top;
+    border-radius: 300px 0px 300px 300px; 
+  }
+
+  .preview a {
+    animation-name: none;
+    width: 150px;
+    height: 50px;
+    background-color: #85D8E3;
+    border-radius: 10%;
+    opacity: 1;
+  }
+}

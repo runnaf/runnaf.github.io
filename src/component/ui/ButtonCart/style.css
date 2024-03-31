@@ -1,0 +1,35 @@
+.page {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.page__link {
+  font-size: 24px;
+  color: #85D8E3;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.page__link:hover {
+  color: #00DFFF
+}
+
+.page__link:active {
+  color: #ff9900
+}
+
+.page__link--active {
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .page__link {
+    font-size: 14px;
+    line-height: 1;
+    padding: 7px;
+    text-align: center;
+  }
+}

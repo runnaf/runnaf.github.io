@@ -1,0 +1,22 @@
+.login__container {
+  margin-right: 50px;
+}
+
+.login__register-link {
+  color: #85D8E3;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.login__register-link:hover {
+  color: #FCC066;
+}
+
+.login__register-link:active {
+  color: #FF9900;
+}
+
+.login__container-content {
+  display: flex;
+  justify-content: flex-end;
+}

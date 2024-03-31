@@ -1,0 +1,47 @@
+.quantity__btn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  line-height: 29px;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+.quantity__btn:hover {
+  color: #85D8E3;
+}
+
+.quantity__btn:active{
+  color: #00DFFF;
+}
+
+.quantity__btn + span {
+  font-size: 24px;
+  line-height: 29px;
+  padding: 0 20px;
+}
+
+.quantity {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .quantity__btn {
+    font-size: 32px;
+    line-height: 1.2;
+    padding: 15px;
+    margin: 0 15px;
+  }
+
+  .quantity__btn + span {
+    font-size: 30px;
+    line-height: 1.2;
+    padding: 0 5px;
+  }
+}

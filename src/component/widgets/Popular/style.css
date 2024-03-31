@@ -1,0 +1,136 @@
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 84px;
+}
+
+.slider ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+}
+
+.slider li {
+  margin: 0;
+  margin-right: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.slider li:last-child {
+  margin-right: 0;
+}
+
+.slider a {
+  text-decoration: none;
+  font-family: inherit;
+  color: hsla(0, 0%, 0%, 1)
+}
+
+.slider img {
+  object-fit: cover;
+  width: 298px;
+  height: 419px;
+}
+
+.slider p {
+  font-size: 18px;
+  line-height: 136.1%;
+  letter-spacing: 0.065em;
+}
+
+.slider__item button {
+  margin-top: auto;
+}
+
+.slider__button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  height: 419px;
+  min-width: 40px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.slider__button::after,
+.slider__button::before {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 2px;
+  background-color: hsla(0, 0%, 0%, 1);
+  top: calc(50% - 13px);
+  left: 0;
+  transform: rotate(45deg);
+  transition: 0.4s;
+}
+
+.slider__button::before {
+  transform: rotate(-45deg);
+  top: calc(50% + 11px);
+}
+
+.slider__button:hover::after,
+.slider__button:hover::before,
+.slider__button:active::before,
+.slider__button:hover::after {
+  background-color: #00DFFF;
+}
+
+.slider__button--prev {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1200px) {
+  .slider {
+    margin-bottom: 60px;
+  }
+  
+  .slider li {
+    margin-right: 80px;
+  }
+  
+  .slider img {
+    object-fit: cover;
+    width: 200px;
+    height: 350px;
+  }
+  
+  .slider p {
+    font-size: 16px;
+  }
+  
+  .slider__button {
+    height: 250px;
+    min-width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 25px 40px;
+    max-width: 100%;
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 20px;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+}

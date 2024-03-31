@@ -1,0 +1,26 @@
+.title-main {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .title-main {
+    font-size: 48px;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-main {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+}

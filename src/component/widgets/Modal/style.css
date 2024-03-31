@@ -1,0 +1,112 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal.modal--active {
+  opacity: 1;
+  z-index: 10000;
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__container {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  transform:  scale(0.5);
+  transition: 0.4s all;
+  display: flex;
+  position: relative;
+  width: 80vw;
+  margin: auto;
+  max-width: 1000px;
+}
+
+.modal__content {
+  margin-left: 30px;
+}
+
+.modal__container-good {
+  display: flex;
+}
+
+.modal__container-good .modal__price {
+  margin-right: 25px;
+}
+
+.modal--active .modal__container {
+  transform: scale(1);
+}
+
+.modal .modal__check {
+  width: 38px;
+  height: 28px;
+}
+
+.modal .modal__text-cart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.modal__text-cart span{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal__text-cart span img {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.modal a {
+  margin-right: 25px;
+}
+
+.modal__button-closed {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__button-closed::after,
+.modal__button-closed::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  transform: rotate(45deg);
+  background-color: black;
+}
+
+.modal__button-closed::before {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 1200px) {
+  .modal__container {
+    flex-direction: column;
+  }
+}
