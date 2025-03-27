@@ -47,6 +47,8 @@ jobs:
         run: npm run build  # Укажите команду сборки вашего проекта
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          destination: ./build
 
   # Deployment job
   deploy:
